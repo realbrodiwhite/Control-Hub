@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gimx_config version="1.0">
+    <controller type="PS5" id="1">
+        <configuration>
+            <!-- Default PS5 controller configuration -->
+            <axis name="lstick_x" device="mouse" id="x" dead_zone="20" multiplier="25" exponent="1.0" shape="Circle"/>
+            <axis name="lstick_y" device="mouse" id="y" dead_zone="20" multiplier="25" exponent="1.0" shape="Circle"/>
+            
+            <!-- Button mappings -->
+            <button name="cross" device="keyboard" id="97" />      <!-- a -->
+            <button name="circle" device="keyboard" id="98" />     <!-- b -->
+            <button name="square" device="keyboard" id="120" />    <!-- x -->
+            <button name="triangle" device="keyboard" id="121" />  <!-- y -->
+            
+            <!-- Shoulder buttons -->
+            <button name="l1" device="keyboard" id="113" />        <!-- q -->
+            <button name="r1" device="keyboard" id="101" />        <!-- e -->
+            <button name="l2" device="keyboard" id="114" />        <!-- r -->
+            <button name="r2" device="keyboard" id="116" />        <!-- t -->
+            
+            <!-- D-pad -->
+            <button name="up" device="keyboard" id="65362" />      <!-- up arrow -->
+            <button name="down" device="keyboard" id="65364" />    <!-- down arrow -->
+            <button name="left" device="keyboard" id="65361" />    <!-- left arrow -->
+            <button name="right" device="keyboard" id="65363" />   <!-- right arrow -->
+            
+            <!-- Special buttons -->
+            <button name="ps" device="keyboard" id="65307" />      <!-- escape -->
+            <button name="share" device="keyboard" id="65289" />   <!-- tab -->
+            <button name="options" device="keyboard" id="65293" /> <!-- enter -->
+        </configuration>
+    </controller>
+    
+    <settings>
+        <!-- General settings -->
+        <setting name="auto_connect" value="false" />
+        <setting name="refresh_rate" value="1000" />
+        <setting name="default_profile" value="ps5_default" />
+        
+        <!-- USB settings -->
+        <setting name="usb_timeout" value="1000" />
+        <setting name="usb_exchange_timeout" value="1000" />
+        
+        <!-- Bluetooth settings -->
+        <setting name="bluetooth_enabled" value="false" />
+        <setting name="bluetooth_scan_timeout" value="5000" />
+        
+        <!-- GUI settings -->
+        <setting name="gui_startup_size" value="400x300" />
+        <setting name="gui_theme" value="default" />
+        <setting name="gui_show_status_bar" value="true" />
+    </settings>
+</gimx_config>

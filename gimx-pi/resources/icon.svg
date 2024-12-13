@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <!-- Controller body -->
+  <rect x="14" y="34" width="100" height="60" rx="30" ry="30" fill="#2d2d2d"/>
+  
+  <!-- D-pad -->
+  <rect x="24" y="54" width="30" height="10" fill="#404040"/>
+  <rect x="34" y="44" width="10" height="30" fill="#404040"/>
+  
+  <!-- Buttons -->
+  <circle cx="84" cy="54" r="5" fill="#5c6bc0"/>
+  <circle cx="94" cy="64" r="5" fill="#ec407a"/>
+  <circle cx="84" cy="74" r="5" fill="#7cb342"/>
+  <circle cx="74" cy="64" r="5" fill="#ff7043"/>
+  
+  <!-- Shoulder buttons -->
+  <rect x="20" y="24" width="30" height="10" rx="5" ry="5" fill="#404040"/>
+  <rect x="78" y="24" width="30" height="10" rx="5" ry="5" fill="#404040"/>
+  
+  <!-- Text -->
+  <text x="64" y="110" text-anchor="middle" font-family="Arial" font-size="14" fill="#ffffff">GIMX-Pi</text>
+</svg>

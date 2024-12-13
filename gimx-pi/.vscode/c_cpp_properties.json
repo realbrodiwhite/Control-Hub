@@ -1,0 +1,24 @@
+{
+    "configurations": [
+        {
+            "name": "ARM",
+            "includePath": [
+                "${workspaceFolder}/**"
+            ],
+            "defines": [
+                "__arm__",
+                "__asm__=asm"
+            ],
+            "compilerPath": "/usr/bin/arm-none-eabi-gcc",
+            "cStandard": "c11",
+            "intelliSenseMode": "gcc-arm",
+            "compilerArgs": [
+                "-mcpu=cortex-a53",
+                "-ffreestanding",
+                "-nostdlib",
+                "-nostartfiles"
+            ]
+        }
+    ],
+    "version": 4
+}
