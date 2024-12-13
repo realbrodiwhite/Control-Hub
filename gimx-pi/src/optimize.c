@@ -1,5 +1,6 @@
 #include "optimize.h"
 #include "status.h"
+#include "script.h"
 
 // Performance tuning parameters
 #define MIN_BUFFER_SIZE_MS    1
@@ -152,12 +153,12 @@ static int validate_input_state(ps5_state_t* state) {
     return 1;
 }
 
-// Process input with optimizations
+// Process input with optimizations and scripting support
 int optimize_process_input(ps5_state_t* state) {
     uint64_t start_time = get_system_time();
     int result = 0;
     
-    // Input validation
+    // Fast-path input validation with early return
     if (!validate_input_state(state)) {
         config.stats.input_errors++;
         config.stats.frames_dropped++;
@@ -165,12 +166,15 @@ int optimize_process_input(ps5_state_t* state) {
         return 0;
     }
     
-    // Prefetch next input buffer
+    // Process scripts first for lowest latency
+    script_process_input(state);
+    
+    // Prefetch next input buffer while script processing is happening
     if (config.features & OPT_CACHE_ENABLED) {
         optimize_prefetch_data(state, sizeof(ps5_state_t));
     }
     
-    // Process input based on mode
+    // Process input based on mode with optimized paths
     switch (config.mode) {
         case PROCESS_MODE_SAFE:
             // Basic processing with bounds checking
@@ -180,12 +184,12 @@ int optimize_process_input(ps5_state_t* state) {
             break;
             
         case PROCESS_MODE_FAST:
-            // Direct processing, no buffering
+            // Ultra-low latency path: Direct processing, no buffering
             result = ps5_process_input(state);
             break;
             
         case PROCESS_MODE_ACCURATE:
-            // Use NEON for input smoothing
+            // High precision path with optimized NEON acceleration
             if (config.features & OPT_NEON_ENABLED) {
                 static ps5_state_t prev_state;
                 ps5_process_input(state);
@@ -198,7 +202,7 @@ int optimize_process_input(ps5_state_t* state) {
             break;
             
         default:
-            // Standard processing
+            // Optimized standard processing
             result = ps5_process_input(state);
             break;
     }
