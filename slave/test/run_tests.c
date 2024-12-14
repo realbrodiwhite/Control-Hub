@@ -29,13 +29,17 @@ static void print_summary(uint32_t passed, uint32_t failed, uint32_t skipped) {
 }
 
 int main(void) {
-    printf("Running GIMX-Pi GUI Tests...\n\n");
+    printf("Running ControlHub Slave Tests...\n\n");
     
     // Initialize test framework
     test_init();
     
-    // Register GUI tests
+    // Register all test categories
     register_gui_tests();
+    register_usb_tests();
+    register_hardware_tests();
+    register_script_tests();
+    register_performance_tests();
     
     // Run all tests
     test_run_all();

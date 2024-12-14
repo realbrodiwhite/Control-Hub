@@ -3,16 +3,16 @@
 # Exit on error
 set -e
 
-echo "Running GIMX-Pi tests..."
+echo "Running ControlHub Slave tests..."
 
 # Check if required files exist
 check_files() {
     local files=(
-        "/usr/local/bin/gimx-pi"
-        "/etc/gimx-pi/config.xml"
-        "/etc/udev/rules.d/99-gimx-pi.rules"
-        "/etc/systemd/system/gimx-pi.service"
-        "/usr/local/share/gimx-pi/icon.svg"
+        "/usr/local/bin/controlhub-slave"
+        "/etc/controlhub-slave/config.xml"
+        "/etc/udev/rules.d/99-controlhub-slave.rules"
+        "/etc/systemd/system/controlhub-slave.service"
+        "/usr/local/share/controlhub-slave/icon.svg"
     )
 
     for file in "${files[@]}"; do
@@ -27,11 +27,11 @@ check_files() {
 
 # Check if services are running
 check_services() {
-    if ! systemctl is-active --quiet gimx-pi.service; then
-        echo "ERROR: gimx-pi service is not running"
+    if ! systemctl is-active --quiet controlhub-slave.service; then
+        echo "ERROR: ControlHub Slave service is not running"
         return 1
     fi
-    echo "GIMX-Pi service is running."
+    echo "ControlHub Slave service is running."
     return 0
 }
 

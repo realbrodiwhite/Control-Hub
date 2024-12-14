@@ -3,7 +3,7 @@
 # Exit on error
 set -e
 
-echo "Preparing SD card for GIMX-Pi bare metal..."
+echo "Preparing SD card for ControlHub Slave bare metal..."
 
 # Check if running with sudo
 if [ "$EUID" -ne 0 ]; then 
@@ -57,7 +57,7 @@ cp ../build/kernel.img "$MOUNT_POINT/"
 
 echo "Creating config.txt..."
 cat > "$MOUNT_POINT/config.txt" << EOL
-# GIMX-Pi bare metal configuration
+# ControlHub Slave bare metal configuration
 kernel_old=1
 disable_commandline_tags=1
 enable_uart=1

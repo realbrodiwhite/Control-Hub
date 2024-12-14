@@ -3,7 +3,7 @@
 # Exit on error
 set -e
 
-echo "Building GIMX-Pi bare metal binary..."
+echo "Building ControlHub Slave bare metal binary..."
 
 # Check for required tools
 if ! command -v arm-none-eabi-gcc &> /dev/null; then

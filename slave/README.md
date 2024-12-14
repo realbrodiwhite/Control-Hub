@@ -1,6 +1,6 @@
-# GIMX-Pi Bare Metal
+# ControlHub Slave
 
-A bare metal implementation of GIMX (Game Input Multi-Converter) designed to run directly on Raspberry Pi 3B hardware without an operating system.
+A bare metal implementation of ControlHub Slave designed to run directly on Raspberry Pi 3B hardware without an operating system.
 
 ## Requirements
 
