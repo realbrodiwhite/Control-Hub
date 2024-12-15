@@ -53,7 +53,7 @@ jobs:
         genhtml coverage.info --output-directory coverage
     
     - name: Upload Coverage Report
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
         name: coverage-report
         path: build/coverage
@@ -93,7 +93,7 @@ jobs:
         doxygen Doxyfile
     
     - name: Upload Documentation
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
         name: documentation
         path: docs/html
@@ -121,7 +121,7 @@ jobs:
         tar czf controlhub-slave.tar.gz release/
     
     - name: Upload Release Artifact
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
         name: release-package
         path: controlhub-slave.tar.gz
