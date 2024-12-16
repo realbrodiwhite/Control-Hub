@@ -138,7 +138,7 @@ jobs:
         name: release-package
     
     - name: Create GitHub Release
-      uses: softprops/action-gh-release@v1
+      uses: softprops/action-gh-release@v2
       if: startsWith(github.ref, 'refs/tags/')
       with:
         files: controlhub-slave.tar.gz
